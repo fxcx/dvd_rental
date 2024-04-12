@@ -1,0 +1,49 @@
+.body {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    /* Alinear el texto al centro */
+    background-color: lightblue;
+    /* Color de fondo para resaltar */
+    padding: 20px;
+    /* Espaciado interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
+}
+
+.row-container {
+    display: flex;
+    flex-direction:row-reverse;
+    align-items: flex-end;
+}
+.row {
+    width: fit-content;
+    padding: 2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+.row:hover {
+    background-color: #0056b3;
+}
+
+.container_img {
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+}
+
+.img {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 16/9;
+    background-image: s;
+
+}
