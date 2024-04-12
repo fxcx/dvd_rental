@@ -12,8 +12,8 @@
 </blockquote>
 
 
-   <div class="container_img">
         <h1 style="text-aling-center">¿?</h1>
+   <div class="container_img">
         <img style="width:100%; max-width: 400px; aspect-ratio: 16/9; object-fit: cover;" src="assets/los-simpson.webp" 
         alt="imagen">
    </div>
