@@ -13,7 +13,7 @@
 
 
    <div class="container_img">
-        <h1>¿?</h1>
+        <h1 style="text-aling-center">¿?</h1>
         <img style="width:100%; max-width: 400px; aspect-ratio: 16/9; object-fit: cover;" src="assets/los-simpson.webp" 
         alt="imagen">
    </div>
@@ -86,7 +86,7 @@ WHERE postalcode IS NULL;
 
 ```
 
-## busqueda con  AND | OR | NOT | IS NOT |
+## busqueda con operadores  AND | OR | NOT 
 ```sql
 --
 SELECT col1 , col2 FROM tabla_name
