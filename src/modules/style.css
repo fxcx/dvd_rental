@@ -1,6 +1,7 @@
-.body {
-    display: flex;
-    justify-items: center;
+body {
+    
+    display: grid;
+    place-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
@@ -8,19 +9,16 @@
 
 .container {
     text-align: center;
-    /* Alinear el texto al centro */
     background-color: lightblue;
-    /* Color de fondo para resaltar */
     padding: 20px;
-    /* Espaciado interno */
     border-radius: 10px;
-    /* Bordes redondeados */
 }
 
+/*  boton  */
 .row-container {
     display: flex;
     flex-direction:row-reverse;
-    align-items: flex-end;
+    align-items: end;
 }
 .row {
     width: fit-content;
@@ -34,16 +32,13 @@
     background-color: #0056b3;
 }
 
-.container_img {
-    margin: 0 auto;
-    text-align: center;
-    padding: 1rem;
+.div {
+    display: flex;
+    justify-content: center;
+
 }
 
-.img {
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 16/9;
-    background-image: s;
-
+.container_img {
+    display: grid;
+    place-items: center;
 }
