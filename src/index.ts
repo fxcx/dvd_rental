@@ -1,15 +1,17 @@
-import { Elysia } from 'elysia'
+import { Elysia } from "elysia";
+import { swagger } from "@elysiajs/swagger";
 
-new Elysia()
-    .post('/post', () => 'hi')
-    .put('/put', () => 'hi')
-    .delete('/delete', () => 'hi')
+import actorRoute from "./routes/actor";
 
+const app = new Elysia();
 
-    .onError(({ code })=>{
-      if (code === 'NOT_FOUND')
-        return 'route not found'
-    })
-    
-.listen(3000)
-// app.handle(new Request('http://localhost:3000/')).then(console.log)
+app.use(swagger());
+
+app.group("/api", (app) => 
+  app.use(actorRoute))
+  
+app.listen(3000);
+
+console.log(
+  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
+);
