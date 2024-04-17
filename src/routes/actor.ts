@@ -7,10 +7,6 @@ import {
     getActorById,
 } from "../controllers/actor";
 
-type Actor = {
-    id: number;
-}
-
 
 const actorRoutes = new Elysia({ prefix: "/actor" })
 
@@ -20,14 +16,14 @@ const actorRoutes = new Elysia({ prefix: "/actor" })
     .post("/", ({ body }) => {
         return createActor(body)
     })
-    .get("/:id", ({ params: { id } }) => getActorById(id), {
-        params: t.Object({ id: t.Numeric() }),
+    .get("/:id", ({ params: { id } }) => {
+        return getActorById(Number(id))
     })
-    .patch("/:id", ({ params: { id }, body}) => {
+    .patch("/:id", ({ params: { id }, body }) => {
         return updateActor(Number(id), body)
     })
-    .delete("/:id", ({ params: { id } }) => deleteActor(id),{
-        params: t.Object({ id: t.Numeric() }),
+    .delete("/:id", ({ params: { id } }) => {
+        return deleteActor(Number(id))
     })
 
 export default actorRoutes;

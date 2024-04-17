@@ -1,7 +1,7 @@
 import { NotFoundError } from "elysia";
 import { prisma } from "../lib/prisma";
 
-export async function createActor(data: any) {
+export const createActor = async(data: any) => {
     const { first_name, last_name } = data;
     try {
         const actor = await prisma.actor.create({
@@ -15,12 +15,11 @@ export async function createActor(data: any) {
         }
         return actor;
     } catch (error) {
-        console.error("Error Creating Todo", error);
+        throw new NotFoundError()
     }
 }
 
-
-export async function getActors() {
+export const getActors = async() => {
     try {
         return await prisma.actor.findMany();
     } catch (error) {
@@ -29,7 +28,7 @@ export async function getActors() {
 }
 
 
-export async function getActorById(id: number) {
+export const getActorById = async(id: number) => {
     try {
         const actor = await prisma.actor.findUnique({
             where: {
@@ -45,7 +44,7 @@ export async function getActorById(id: number) {
     }
 }
 
-export async function updateActor(id: number, data: any) {
+export const updateActor = async(id: number, data: any) => {
     try {
         const { first_name, last_name } = data;
         const actor = await prisma.actor.update({
@@ -66,7 +65,7 @@ export async function updateActor(id: number, data: any) {
     }
 }
 
-export async function deleteActor(id: number) {
+export const deleteActor = async (id: number) => {
     try {
         const actor = await prisma.actor.delete({
             where: {
